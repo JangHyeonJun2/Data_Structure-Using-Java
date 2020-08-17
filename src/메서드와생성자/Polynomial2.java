@@ -5,8 +5,19 @@ package 메서드와생성자;
  */
 public class Polynomial2 {
     public char name; // 다항식 이름
-    public int nTerms = 0; //다항식을 구성하는 항의 개수.
+    public int nTerms; //다항식을 구성하는 항의 개수.
     public Term2[] term2s; //다항식을 구성하는 항들을 저장할 배열.
+
+    public Polynomial2() {
+        this.nTerms = 0;
+        this.term2s = new Term2[100];
+    }
+
+    public Polynomial2(char name) {
+        this.name = name;
+        this.nTerms = 0;
+        this.term2s = new Term2[100];
+    }
 
     public int calcPolynomial(int x) {
         int result = 0;
@@ -38,9 +49,7 @@ public class Polynomial2 {
                 term2s[i+1] = term2s[i];
                 i--;
             }
-            term2s[i+1] = new Term2();
-            term2s[i+1].coef = ncoef;
-            term2s[i+1].expo = nexpo;
+            term2s[i+1] = new Term2(ncoef,nexpo);
             nTerms++;
         }
     }

@@ -7,6 +7,12 @@ public class Term2 {
     public int coef;
     public int expo;
 
+    public Term2(int coef, int expo) {
+        this.coef = coef;
+        this.expo = expo;
+    }
+
+
     public int calcTerm(int x) {
         return (int)(coef * Math.pow(x, expo)); //pow리턴값은 double이기 때문에 int로 캐스팅함
     }

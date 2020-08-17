@@ -22,10 +22,7 @@ public class Code07 {
                     System.out.println("이 이름은 사용중입니다.");
                     continue;
                 }
-                polys[n] = new Polynomial2();//중요!!!
-                polys[n].term2s = new Term2[100];
-                polys[n].name = name;
-                polys[n].nTerms = 0;
+                polys[n] = new Polynomial2(name);//중요!!!
                 n++;
 
             }else if(command.equals("add")){
