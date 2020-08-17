@@ -1,9 +1,11 @@
-package 클래스_객체_참조변수;
+package 메서드와생성자;
+
+import 클래스_객체_참조변수.Menual;
 
 import java.util.Scanner;
 
-public class Code06 {
-    static Polynomial[] polys = new Polynomial[100];
+public class Code07 {
+    static Polynomial2[] polys = new Polynomial2[100];
     static int n = 0;
 
     public static void main(String[] args) {
@@ -20,8 +22,8 @@ public class Code06 {
                     System.out.println("이 이름은 사용중입니다.");
                     continue;
                 }
-                polys[n] = new Polynomial();//중요!!!
-                polys[n].terms = new Term[100];
+                polys[n] = new Polynomial2();//중요!!!
+                polys[n].term2s = new Term2[100];
                 polys[n].name = name;
                 polys[n].nTerms = 0;
                 n++;
@@ -35,7 +37,7 @@ public class Code06 {
                 else {
                     int c = kb.nextInt();
                     int e = kb.nextInt();
-                    addTerm(polys[index],c,e);
+                    polys[index].addTerm(c,e);
                 }
 //                System.out.println(polys[index].nTerms);
 
@@ -47,7 +49,7 @@ public class Code06 {
                     System.out.println("No such polynomial exists.");
                 }else {
                     int x = kb.nextInt();
-                    int result = calcPolynomial(polys[index],x);
+                    int result = polys[index].calcPolynomial(x);
                     System.out.println(result);
                 }
 
@@ -59,7 +61,7 @@ public class Code06 {
                     System.out.println("No such polynomial exists.");
                 }
                 else{
-                    printPolymial(polys[index]);
+                    polys[index].printPolymial();
                 }
                 System.out.println();
 
@@ -69,18 +71,6 @@ public class Code06 {
             }
         }
         kb.close();
-    }
-
-    private static int calcPolynomial(Polynomial poly, int x) {
-        int result = 0;
-        for(int i=0; i<poly.nTerms;i++){
-            result += calcTerm(poly.terms[i],x);
-        }
-        return result;
-    }
-
-    private static int calcTerm(Term term, int x) {
-        return (int)(term.expo * Math.pow(x,term.expo)); //pow리턴값은 double이기 때문에 int로 캐스팅함
     }
     private static boolean compaName(char name){
         for (int i=0;i<n;i++){
@@ -96,42 +86,9 @@ public class Code06 {
         }
         return -1;
     }
-    private static void addTerm(Polynomial p,int c,int e){
-        int index = findTerm(p,e);
-        if(index != -1){
-            p.terms[index].coef += c;
-            if(p.terms[index].coef == 0){
-                int i=index;
-                for(;i<=p.nTerms;i++){
-                    p.terms[i] = p.terms[i+1];
-                }
-            }
-        }else {
-            int i=p.nTerms-1;
-            while(i>=0 && p.terms[i].expo < e){
-                p.terms[i+1] = p.terms[i];
-                i--;
-            }
-            p.terms[i+1] = new Term();
-            p.terms[i+1].coef = c;
-            p.terms[i+1].expo = e;
-            p.nTerms++;
-        }
-    }
-    private static int findTerm(Polynomial p ,int e){
-        for(int i=0;i<p.nTerms && p.terms[i].expo >= e; i++){
-            if(p.terms[i].expo == e)
-                return i;
-        }
-        return -1;
-    }
-    private static void printPolymial(Polynomial p){
-        for(int i=0; i<p.nTerms; i++){
-            printTerm(p.terms[i]);
-        }
-    }
 
-    private static void printTerm(Term term) {
-        System.out.print(term.coef +"x^"+ term.expo +"+");
-    }
+
+
+
+
 }
