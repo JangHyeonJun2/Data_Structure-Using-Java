@@ -4,9 +4,9 @@ package static_public_Ex;
  * 하나의 다항식을 표현하기 위한 클래스.
  */
 public class Polynomial3 {
-    public char name; // 다항식 이름
-    public int nTerms; //다항식을 구성하는 항의 개수.
-    public Term3[] term3s; //다항식을 구성하는 항들을 저장할 배열.
+    private char name; // 다항식 이름
+    private int nTerms; //다항식을 구성하는 항의 개수.
+    private Term3[] term3s; //다항식을 구성하는 항들을 저장할 배열.
 
     public Polynomial3() {
         this.nTerms = 0;
@@ -36,8 +36,8 @@ public class Polynomial3 {
     public void addTerm(int ncoef, int nexpo){
         int index = findTerm(nexpo);
         if(index != -1){
-            term3s[index].coef += ncoef;
-            if(term3s[index].coef == 0){
+            term3s[index].setCoef(term3s[index].getCoef() + ncoef);
+            if(term3s[index].getCoef() == 0){
                 int i=index;
                 for(;i<=nTerms;i++){
                     term3s[i] = term3s[i+1];
@@ -45,7 +45,7 @@ public class Polynomial3 {
             }
         }else {
             int i=nTerms-1;
-            while(i>=0 && term3s[i].expo < nexpo){
+            while(i>=0 && term3s[i].getExpo() < nexpo){
                 term3s[i+1] = term3s[i];
                 i--;
             }
@@ -55,10 +55,18 @@ public class Polynomial3 {
     }
 
     public int findTerm(int e){
-        for(int i = 0; i< nTerms && term3s[i].expo >= e; i++){
-            if(term3s[i].expo == e)
+        for(int i = 0; i< nTerms && term3s[i].getExpo() >= e; i++){
+            if(term3s[i].getExpo() == e)
                 return i;
         }
         return -1;
+    }
+
+    public char getName() {
+        return name;
+    }
+
+    public void setName(char name) {
+        this.name = name;
     }
 }
