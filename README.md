@@ -5,7 +5,7 @@
 - 문자열 다루기 (clear)
 - 클래스,객체, 참조변수 (clear)
 - 메서드와 생성자(clear)
-- static 그리고 public
+- static 그리고 public (clear)
 - 상속(Inheritance)
 - 예제(Scheduler Program)
 - 클래스 Object와 Wrapper 클래스
