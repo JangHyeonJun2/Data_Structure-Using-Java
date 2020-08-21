@@ -9,5 +9,6 @@ public class Code1 {
         System.out.println(num +antherNum);
         System.out.println("Num : "+ num);
         System.out.println("antherNum : "+ antherNum);
+        System.out.println();
     }
 }
