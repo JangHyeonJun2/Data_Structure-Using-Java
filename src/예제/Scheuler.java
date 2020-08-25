@@ -3,6 +3,12 @@ package 예제;
 import java.util.Scanner;
 
 public class Scheuler {
+
+    public Event[] events = new Event[100];
+    public int eventsCount = 0;
+
+
+
     public void processCommand(){
         Scanner sc = new Scanner(System.in);
 

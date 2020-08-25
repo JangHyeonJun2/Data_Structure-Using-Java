@@ -1,11 +1,10 @@
 package 예제;
 
-public class OnedayEvent {
-    public String title;
+public class OnedayEvent extends Event {
     public MyDate myDate;
 
     public OnedayEvent(String title, MyDate myDate) {
-        this.title = title;
+        super(title);
         this.myDate = myDate;
     }
 

@@ -1,11 +1,10 @@
 package 예제;
 
-public class DeadlinedEvent {
-    public String title;
+public class DeadlinedEvent extends Event{
     public MyDate deadline;
 
     public DeadlinedEvent(String title, MyDate deadline) {
-        this.title = title;
+        super(title);
         this.deadline = deadline;
     }
 
