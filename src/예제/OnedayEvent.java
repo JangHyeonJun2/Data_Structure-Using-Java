@@ -10,8 +10,13 @@ public class OnedayEvent extends Event {
 
     @Override
     public String toString() {
-        return "OnedayEvent{" +
-                "title='" + title + '\'' + myDate +
-                '}';
+        return "OnedayEvent{" + "title='" + title + '\'' + myDate + "}";
+    }
+
+    @Override
+    public void print() {
+        System.out.println("---oneDay---");
+        super.print();
+        System.out.println("Date = "+ myDate.year +"/"+ myDate.month+"/"+ myDate.day);
     }
 }

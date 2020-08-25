@@ -10,6 +10,13 @@ public class DeadlinedEvent extends Event{
 
     @Override
     public String toString() {
-        return title +", "+ deadline.toString();
+        return "DeadlineEvent{"+title +", "+ deadline.toString()+"}";
+    }
+
+    @Override
+    public void print() {
+        System.out.println("---deadline---");
+        super.print();
+        System.out.println("Date = "+ deadline.year +"/"+ deadline.month+"/"+ deadline.day);
     }
 }

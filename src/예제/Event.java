@@ -6,4 +6,8 @@ public class Event {
     public Event(String title) {
         this.title = title;
     }
+
+    public void print(){
+        System.out.println("title = " + title);
+    }
 }

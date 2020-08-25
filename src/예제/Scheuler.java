@@ -21,20 +21,24 @@ public class Scheuler {
                     handleAddOneDayEvent();
                 }else if (type.equalsIgnoreCase("duration")){
                     handleAddDurationEvent();
-                }else if (type.equalsIgnoreCase("deadline")){
+                }else if (type.equalsIgnoreCase("deadline")) {
                     handelAddDeadlineEvent();
-                }else if(type.equalsIgnoreCase("exit")){
-
                 }
             }else if(command.equals("list")){
                 handlList();
             }else if(command.equals("show")){
-
+                handShow();
             }else if(command.equals("exit")){
                 break;
             }
         }
         sc.close();
+    }
+
+    private void handShow(){
+        for (int i=0; i<eventsCount; i++){
+            events[i].print();
+        }
     }
 
     private void handlList() {
@@ -44,11 +48,33 @@ public class Scheuler {
     }
 
     private void handelAddDeadlineEvent() {
+        System.out.print("  when:  ");
+        String dateString = sc.next(); //2014/12/3
+        sc.nextLine();//enter 값을 없애주기 위함
+        System.out.print("  title: ");
+        String endtitle = sc.nextLine(); // mybirthday
 
+        MyDate strDate = parsDateString(dateString);
+        DeadlinedEvent deadlinedEvent = new DeadlinedEvent(endtitle,strDate);
+        addEventCount(deadlinedEvent);
     }
 
     private void handleAddDurationEvent(){
+        System.out.println("  when:  ");
+        System.out.print("  begin:  ");
+        String beginDate = sc.next(); //begin
+        System.out.print("  end  :  ");
+        String endDate = sc.next(); //end
+        sc.nextLine();//enter 값을 없애주기 위함
 
+        System.out.print("  title: ");
+        String title = sc.nextLine();//title
+
+        MyDate beginMyDate = parsDateString(beginDate);
+        MyDate endMyDate = parsDateString(endDate);
+
+        DurationEvent durationEvent = new DurationEvent(title,beginMyDate,endMyDate);
+        addEventCount(durationEvent);
     }
 
     private void handleAddOneDayEvent(){
@@ -65,7 +91,7 @@ public class Scheuler {
         addEventCount(onedayEvent);
     }
 
-    private void addEventCount(OnedayEvent onedayEvent) {
+    private void addEventCount(Event onedayEvent) {//여기서 참조변수를 Event라고 써주어야한다.
         if(eventsCount >= capacity){
             rellocation();
         }

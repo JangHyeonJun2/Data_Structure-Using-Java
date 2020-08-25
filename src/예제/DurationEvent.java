@@ -12,6 +12,14 @@ public class DurationEvent extends Event {
 
     @Override
     public String toString() {
-        return title+", "+begin.toString()+" ~ "+end.toString();
+        return "DurationEvent{" +title+", "+begin.toString()+" ~ "+end.toString()+"}";
+    }
+
+    @Override
+    public void print() {
+        System.out.println("---duration---");
+        super.print();
+        System.out.println("Date = "+ begin.year +"/"+ begin.month+"/"+ begin.day+" ~ "+
+                                       end.year +"/"+ end.month+"/"+ end.day);
     }
 }
