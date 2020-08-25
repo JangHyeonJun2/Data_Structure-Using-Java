@@ -7,7 +7,7 @@
 - 메서드와 생성자 (clear)
 - static 그리고 public  (clear)
 - 상속(Inheritance) (clear)
-- 예제(Scheduler Program)
+- 예제(Scheduler Program) (clear)
 - 클래스 Object와 Wrapper 클래스
 - 추상클래스와 인터페이스
 - Generic 프로그래밍과 Generics
