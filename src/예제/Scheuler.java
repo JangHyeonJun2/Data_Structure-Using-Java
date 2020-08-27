@@ -27,7 +27,7 @@ public class Scheuler {
             }else if(command.equals("list")){
                 handlList();
             }else if(command.equals("show")){
-                handShow();
+                handleShow();
             }else if(command.equals("exit")){
                 break;
             }
@@ -35,7 +35,7 @@ public class Scheuler {
         sc.close();
     }
 
-    private void handShow(){
+    private void handleShow(){
         for (int i=0; i<eventsCount; i++){
             events[i].print();
         }
