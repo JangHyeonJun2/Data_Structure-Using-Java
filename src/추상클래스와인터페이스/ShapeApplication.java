@@ -1,5 +1,6 @@
 package 추상클래스와인터페이스;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ShapeApplication {
@@ -18,7 +19,7 @@ public class ShapeApplication {
             }else if(command.equalsIgnoreCase("show") || command.equalsIgnoreCase("showdetail")){
                 handleShow(command.equalsIgnoreCase("showdetail"));
             }else if (command.equalsIgnoreCase("sort")){
-                handleSort();
+                handleSort(shapes, count);
             }else if (command.equalsIgnoreCase("exit")){
                 break;
             }
@@ -67,13 +68,34 @@ public class ShapeApplication {
             if(deatailed){
                 System.out.println("    The area is " + shapes[i].computerArea());
                 System.out.println("    The Permeter is " + shapes[i].computerPerimeter());
+                Arrays.sort(shapes);
             }
         }
 
     }
 
-    private void handleSort() {
-
+//    private void handleSort() {
+//        for (int i=count-1; i>0; i--){
+//            for (int j=0; j<i; j++){
+//                if (shapes[j].computerArea() > shapes[j+1].computerArea()){
+//                    Shape tmp = shapes[i];
+//                    shapes[i] = shapes[j+1];
+//                    shapes[j+1] = tmp;
+//                }
+//            }
+//        }
+//
+//    }
+    private void handleSort(MyComparable[] data , int count) {
+        for (int i=count-1; i>0; i--){
+            for (int j=0; j<i; j++){
+                if (data[j].compareTo(data[j+1]) > 0){
+                    MyComparable tmp = data[i];
+                    data[i] = data[j+1];
+                    data[j+1] = tmp;
+                }
+            }
+        }
 
     }
     public static void main(String[] args) {
