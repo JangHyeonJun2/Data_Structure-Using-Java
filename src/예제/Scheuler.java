@@ -1,5 +1,6 @@
 package 예제;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Scheuler {
@@ -28,6 +29,8 @@ public class Scheuler {
                 handlList();
             }else if(command.equals("show")){
                 handleShow();
+            }else if(command.equalsIgnoreCase("sort")){
+                Arrays.sort(events,0,eventsCount);
             }else if(command.equals("exit")){
                 break;
             }

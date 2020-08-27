@@ -22,4 +22,9 @@ public class DurationEvent extends Event {
         System.out.println("Date = "+ begin.year +"/"+ begin.month+"/"+ begin.day+" ~ "+
                                        end.year +"/"+ end.month+"/"+ end.day);
     }
+
+    @Override
+    public MyDate getRepresentativeDate() {
+        return begin;
+    }
 }

@@ -19,4 +19,9 @@ public class OnedayEvent extends Event {
         super.print();
         System.out.println("Date = "+ myDate.year +"/"+ myDate.month+"/"+ myDate.day);
     }
+
+    @Override
+    public MyDate getRepresentativeDate() {
+        return myDate;
+    }
 }

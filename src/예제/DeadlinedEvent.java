@@ -19,4 +19,9 @@ public class DeadlinedEvent extends Event{
         super.print();
         System.out.println("Date = "+ deadline.year +"/"+ deadline.month+"/"+ deadline.day);
     }
+
+    @Override
+    public MyDate getRepresentativeDate() {
+        return deadline;
+    }
 }
