@@ -9,7 +9,7 @@
 - 상속(Inheritance) (clear)
 - 예제(Scheduler Program) (clear)
 - 클래스 Object와 Wrapper 클래스 (clear)
-- 추상클래스와 인터페이스
+- 추상클래스와 인터페이스 (clear)
 - Generic 프로그래밍과 Generics
 - 연겨러리스트의 개념과 기본연산
 - 연결리스트 응용예
