@@ -18,6 +18,8 @@ public abstract class Event implements Comparable{
         MyDate mine = getRepresentativeDate();
         MyDate yours = ((Event)o).getRepresentativeDate();
         int result = MyDate.comp(mine,yours);
+
+
         return result;
     }
 }
