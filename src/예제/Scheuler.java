@@ -1,12 +1,15 @@
 package 예제;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Scheuler {
     private int capacity = 10;
-    public Event[] events = new Event[capacity];
-    public int eventsCount = 0;
+    public ArrayList<Event> events = new ArrayList<>();
+//    public Event[] events = new Event[capacity];
+//    public int eventsCount = 0;
     Scanner sc;
 
 
@@ -30,7 +33,7 @@ public class Scheuler {
             }else if(command.equals("show")){
                 handleShow();
             }else if(command.equalsIgnoreCase("sort")){
-                Arrays.sort(events,0,eventsCount);
+                Collections.sort(events);
             }else if(command.equals("exit")){
                 break;
             }
@@ -39,14 +42,18 @@ public class Scheuler {
     }
 
     private void handleShow(){
-        for (int i=0; i<eventsCount; i++){
-            events[i].print();
+        for (int i=0; i<events.size(); i++){
+            events.get(i).print();
         }
     }
 
     private void handlList() {
-        for (int i=0; i<eventsCount; i++){
-            System.out.println("    " + events[i].toString());
+//        for (int i=0; i<events.size(); i++){
+//            System.out.println("    " + events.get(i).toString());
+//        }
+
+        for (Event ev: events) {
+            System.out.println("    " + ev.toString());
         }
     }
 
@@ -95,22 +102,19 @@ public class Scheuler {
     }
 
     private void addEventCount(Event onedayEvent) {//여기서 참조변수를 Event라고 써주어야한다.
-        if(eventsCount >= capacity){
-            rellocation();
-        }
-        events[eventsCount++] = onedayEvent;
+        events.add(onedayEvent);
     }
-    //배열 크기 재할당!
-    private void rellocation() {
-        System.out.println("events.length: " + events.length);
-        Event[] tmp = new Event[capacity*2];
-        for(int i=0; i<eventsCount; i++){
-            tmp[i] = events[i];
-        }
-        events = tmp;
-        capacity *= 2;
-        System.out.println("events.length: " + events.length);
-    }
+//    //배열 크기 재할당!
+//    private void rellocation() {
+//        System.out.println("events.length: " + events.length);
+//        Event[] tmp = new Event[capacity*2];
+//        for(int i=0; i<eventsCount; i++){
+//            tmp[i] = events[i];
+//        }
+//        events = tmp;
+//        capacity *= 2;
+//        System.out.println("events.length: " + events.length);
+//    }
 
     // 2014/10/2 날짜를 분리해주는 메서드
     private MyDate parsDateString(String dateString) {
