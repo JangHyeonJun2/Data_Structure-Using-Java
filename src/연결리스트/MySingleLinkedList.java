@@ -65,13 +65,15 @@ public class MySingleLinkedList<T> {
         return p;
     }
     public void add(int index, T item){
-        if(index < 0 || index >= size)
+        if(index < 0 || index > size)
             return;
         if (index == 0)
             addFirst(item);
+        else {
+            Node<T> searchNode = getNode(index-1); //여기서 왜 index - 1이 나면 3번째에 추가하고 싶으면 2번째의 노드의 주소를 참조하고 있는 1번째의 next값을 알아야 하기 때문이다.
+            addAfter(searchNode,item);
+        }
 
-        Node<T> searchNode = getNode(index-1); //여기서 왜 index - 1이 나면 3번째에 추가하고 싶으면 2번째의 노드의 주소를 참조하고 있는 1번째의 next값을 알아야 하기 때문이다.
-        addAfter(searchNode,item);
     }
 
     public T remove(int index){
@@ -87,6 +89,22 @@ public class MySingleLinkedList<T> {
         }
     }
 
+    public T remove(T item){
+        Node<T> p = head;
+        Node<T> q = null;
+
+        while(p != null && !p.data.equals(item)){
+            q = p;
+            p = p.next;
+        }
+        if(p == null)
+            return null;
+        else if(q == null)
+            removeFirst();
+
+        return removeAfter(q);
+    }
+
     public T get(int index){
         if (index < 0 || index >= size)
             return null;
@@ -98,6 +116,16 @@ public class MySingleLinkedList<T> {
         return getNode(index).data;
     }
     public static void main(String[] args) {
-
+        MySingleLinkedList<String> list = new MySingleLinkedList<>();
+        list.add(0,"Monday");
+        list.add(2,"Tuesday");
+        list.add(0, "Saturday");
+        list.add(1, "Friday");
+        list.add(2, "Sunday");
+        // Sa - F - Su - M - T
+        String str = list.get(4);
+        System.out.println("index(4) = "+str);
+        String str2 = list.remove(4);
+        System.out.println("index(4) = "+str2);
     }
 }
