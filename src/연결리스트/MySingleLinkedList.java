@@ -42,20 +42,60 @@ public class MySingleLinkedList<T> {
         size--;
         return temp;
     }
-    public void add(int index, T item){
-
-    }
-
-    public int remove(int index){
-
-    }
 
     public int indexOf(T item){
+        Node<T> p = head;
+        int index = 0;
+        while(p != null){
+            if(p.data.equals(item))
+                return index;
+            p = p.next;
+            index++;
+        }
+        return -1;
+    }
 
+    public Node<T> getNode(int index){
+        if(index < 0 || index >= size)
+            return null;
+        Node<T> p = head;
+        for (int i=0; i<index; i++){
+            p = p.next;
+        }
+        return p;
+    }
+    public void add(int index, T item){
+        if(index < 0 || index >= size)
+            return;
+        if (index == 0)
+            addFirst(item);
+
+        Node<T> searchNode = getNode(index-1); //여기서 왜 index - 1이 나면 3번째에 추가하고 싶으면 2번째의 노드의 주소를 참조하고 있는 1번째의 next값을 알아야 하기 때문이다.
+        addAfter(searchNode,item);
+    }
+
+    public T remove(int index){
+        if(index < 0 || index >= size)
+            return null;
+
+        if (index == 0){
+            return removeFirst();
+        }else {
+            Node<T> preNode = getNode(index-1); //여기서도 index - 1은 삭제하고 싶은 노드가 3번째 노드이면 그 전 노드를 알아야하기 때문에 index - 1  이다.
+            T removedItem = removeAfter(preNode);
+            return removedItem;
+        }
     }
 
     public T get(int index){
-
+        if (index < 0 || index >= size)
+            return null;
+//        Node<T> p = head; //getNode와 중복된 코드이기 때문에 생략!
+//        for(int i=0; i<index; i++){
+//            p = p.next;
+//        }
+//        return p.data;
+        return getNode(index).data;
     }
     public static void main(String[] args) {
 
