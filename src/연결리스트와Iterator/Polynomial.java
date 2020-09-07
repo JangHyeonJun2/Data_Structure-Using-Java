@@ -2,49 +2,43 @@ package 연결리스트와Iterator;
 
 
 import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.ListIterator;
 
 public class Polynomial {
     public char name;
-    public MySingleLinkedList<Term> terms;
+    public LinkedList<Term> terms;
 
     public Polynomial(char name) {
         this.name = name;
-        this.terms = new MySingleLinkedList<>();
+        this.terms = new LinkedList<Term>();
     }
 
     public char getName() {
         return name;
     }
-//
-//    public void addTerm(int coef, int expo){
-//        if (coef == 0)
-//            return;
-//
-//        Node<Term> p = terms.head;
-//        Node<Term> q = null;
-//
-//        while (p!=null && p.data.expo > expo){
-//            q = p;
-//            p = p.next;
-//        }
-//
-//        if (p!=null && p.data.expo == expo){
-//            p.data.coef += coef;
-//            if (p.data.coef == 0){
-//                if (q == null) //ㄷㅔ이터가 하나밖에 없을 때, 즉 데이터가 하나밖에 없으면 하나의 데이터 next는 null을 가리키고 있다.
-//                    terms.removeFirst();
-//                else
-//                    terms.removeAfter(q);
-//            }
-//
-//        }else {
-//            Term t = new Term(coef,expo);
-//            if(q == null)
-//                terms.addFirst(t);
-//            else
-//                terms.addAfter(q,t);
-//        }
-//    }
+
+    public void addTerm(int coef,int expo){
+        if (coef == 0)
+            return;
+        ListIterator<Term> iter = terms.listIterator();
+        while(iter.hasNext()){
+            Term t = iter.next();
+            if(t.expo == expo){
+                t.coef += coef;
+                if (t.coef == 0){
+                    iter.remove();
+                }
+                return;
+            }else if (t.expo < expo){
+                iter.previous();
+                iter.add(new Term(coef,expo));
+                return;
+            }
+        }
+        iter.add(new Term(coef,expo));
+    }
+
 
     public int calc(int x){
         int result = 0;
