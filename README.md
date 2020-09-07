@@ -1,5 +1,5 @@
 # 자바를 사용한 자료구조 연습
-### 8/1 ~ 8/31
+### 8/1 ~ 9/07
 - 변수,배열,반복문 (clear)
 - 메서드 호출과 프로그램의 기능적 분할 (clear)
 - 문자열 다루기 (clear)
@@ -13,8 +13,8 @@
 - Generic 프로그래밍과 Generics (clear)
 - 연결리스트의 개념과 기본연산 (clear)
 - 연결리스트 응용예 (clear)
-- 연결리스트와 Iterator
-- 이중연결리스트와 listIterator
+- 연결리스트와 Iterator (clear)
+- 이중연결리스트와 listIterator (clear)
 
 
 # Comparable과 Comparator의 차이와 사용법
