@@ -104,7 +104,24 @@ public class KWLinkedList<T> {
 
         @Override
         public void remove() {
-
+            if(head == null){
+                throw new NoSuchElementException();
+            }else if(nextItem == head){
+                head = null;
+                nextItem = null;
+                tail = null;
+            }else if (nextItem == null){
+                nextItem = lastItemReturned.prev;
+                lastItemReturned = nextItem.prev;
+                tail = nextItem;
+            }else {
+                lastItemReturned.next = null;
+                lastItemReturned = lastItemReturned.prev;
+                nextItem = nextItem.prev;
+                tail = nextItem;
+            }
+            size--;
+            index--;
         }
 
         @Override
@@ -134,26 +151,42 @@ public class KWLinkedList<T> {
                 newNode.next = nextItem;
                 nextItem.prev = newNode;
             }
+            size++;
+            index++;
         }
     }
 
     public int indexOf(T item){
-
+        Node<T> p = head;
+        int index = 0;
+        while(p != null){
+            if(p.data.equals(item))
+                return index;
+            p = p.next;
+            index++;
+        }
+        return -1;
     }
 
     public T get(int index){
-
+        return listIterator(index).next();
     }
 
-    public boolean remove(int index){
-
-    }
-
-    public void remove(T obj){
-
+    public T remove(int index){
+        if (index < 0 || index >= size){
+            throw new IndexOutOfBoundsException();
+        }
+        ListIterator<T> iter = listIterator(index);
+        T result = iter.next();
+        iter.remove();
+        return result;
     }
 
     public int size(){
         return size;
+    }
+
+    public void add(int index , T obj){
+        listIterator(index).add(obj);
     }
 }

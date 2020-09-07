@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d1e71c9-196c-441d-8f3b-ce915595e841" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/이중연결리스트/KWLinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/이중연결리스트/KWLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/이중연결리스트/KWLinkedList.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,20 +19,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/예제/Scheuler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1665">
-              <caret line="116" column="7" selection-start-line="107" selection-start-column="6" selection-end-line="116" selection-end-column="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3293#3294#0" expanded="true" />
-                <element signature="e#3359#3360#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/연결리스트다항식/Polynomial.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -86,8 +71,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/연결리스트와Iterator/MySingleLinkedList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
+            <state relative-caret-position="439">
+              <caret line="102" column="18" lean-forward="true" selection-start-line="94" selection-start-column="7" selection-end-line="102" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -107,8 +92,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/이중연결리스트/KWLinkedList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="130" column="16" selection-start-line="130" selection-start-column="16" selection-end-line="130" selection-end-column="16" />
+            <state relative-caret-position="182">
+              <caret line="114" column="43" selection-start-line="114" selection-start-column="43" selection-end-line="114" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#460#461#0" expanded="true" />
@@ -125,8 +110,12 @@
                 <element signature="e#902#903#0" expanded="true" />
                 <element signature="e#958#959#0" expanded="true" />
                 <element signature="e#990#991#0" expanded="true" />
+                <element signature="e#3656#3657#0" expanded="true" />
+                <element signature="e#3692#3693#0" expanded="true" />
                 <element signature="e#611#612#0" expanded="true" />
                 <element signature="e#637#638#0" expanded="true" />
+                <element signature="e#3886#3887#0" expanded="true" />
+                <element signature="e#3931#3932#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -235,6 +224,12 @@
               <item name="doit_1" type="b2602c69:ProjectViewProjectNode" />
               <item name="study_algorithm" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="doit_1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="study_algorithm" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="연결리스트와Iterator" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="doit_1" type="b2602c69:ProjectViewProjectNode" />
@@ -445,7 +440,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/메서드와생성자/Prac.java" />
     <entry file="file://$PROJECT_DIR$/data.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -848,16 +842,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/연결리스트와Iterator/MySingleLinkedList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/연결리스트와Iterator/Term.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -872,10 +856,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/연결리스트와Iterator/MySingleLinkedList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="439">
+          <caret line="102" column="18" lean-forward="true" selection-start-line="94" selection-start-column="7" selection-end-line="102" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/util/ListIterator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="149" column="9" selection-start-line="149" selection-start-column="9" selection-end-line="149" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/이중연결리스트/KWLinkedList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="130" column="16" selection-start-line="130" selection-start-column="16" selection-end-line="130" selection-end-column="16" />
+        <state relative-caret-position="182">
+          <caret line="114" column="43" selection-start-line="114" selection-start-column="43" selection-end-line="114" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#460#461#0" expanded="true" />
@@ -892,8 +893,12 @@
             <element signature="e#902#903#0" expanded="true" />
             <element signature="e#958#959#0" expanded="true" />
             <element signature="e#990#991#0" expanded="true" />
+            <element signature="e#3656#3657#0" expanded="true" />
+            <element signature="e#3692#3693#0" expanded="true" />
             <element signature="e#611#612#0" expanded="true" />
             <element signature="e#637#638#0" expanded="true" />
+            <element signature="e#3886#3887#0" expanded="true" />
+            <element signature="e#3931#3932#0" expanded="true" />
           </folding>
         </state>
       </provider>
