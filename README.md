@@ -14,7 +14,7 @@
 - 연결리스트의 개념과 기본연산 (clear)
 - 연결리스트 응용예 (clear)
 - 연결리스트와 Iterator (clear)
-- 이중연결리스트와 listIterator (clear)
+- 이중연결리스트와 listIterator  (clear)
 
 
 # Comparable과 Comparator의 차이와 사용법
